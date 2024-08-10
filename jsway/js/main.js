@@ -1,3 +1,5 @@
+// 1------------------------------------------------------------
+
 // function camelize(str){
 //     str = str.split('-')
 //     if(str[0] === ''){
@@ -19,6 +21,8 @@
 
 
 
+// 2------------------------------------------------------------------
+
 // function filterRange(arr, a, b){
 //     let filtered = arr.filter(el => el >= a && el <= b)
 //     return filtered
@@ -28,19 +32,63 @@
 // console.log(filtered, arr)
 
 
+
+// 3------------------------------------------------------------------
+
 // function decreasingOrder(arr){
 //     return arr.sort((a,b) => b-a)
 // }
 // let arr = [5, 2, 1, -10, 8]
 // console.log(decreasingOrder(arr), arr)
 
-function copySorted(arr){
-    let copy = []
-    for (let i = 0 ; i < arr.length ; i++){
-        copy.push(arr[i])
+
+
+
+// 4----------------------------------------------------------------
+
+// function copySorted(arr){
+//     let copy = []
+//     for (let i = 0 ; i < arr.length ; i++){
+//         copy.push(arr[i])
+//     }
+//     return copy.sort()
+// }
+// let arr = ["HTML", "JavaScript", "CSS"];
+// let sorted = copySorted(arr);
+// console.log(arr, sorted)
+
+
+
+// 5--------------------------------------------------------------
+
+function Calc(){
+    this.operation = {
+        '+' : (a,b) => a + b,
+        '-' : (a,b) => a - b,
+        '*' : (a,b) => a * b,
+        '/' : (a,b) => a / b
     }
-    return copy.sort()
+
+    this.getVal = (str) =>{
+        str = str.split(' ')
+
+        a = +str[0]
+        op = str[1]
+        b = +str[2]
+
+        if (!this.operation[op] || isNaN(a) || isNaN(b)){
+            return 'invalid entry'
+        }else{
+            return this.operation[op](a,b)
+        }
+    }
+    this.addOps = function(name, func){
+        return this.operation[name] = (func)
+    }
 }
-let arr = ["HTML", "JavaScript", "CSS"];
-let sorted = copySorted(arr);
-console.log(arr, sorted)
+
+const power = new Calc()
+
+power.addOps('**', (a,b) => a**b)
+
+console.log(power.getVal('2 ** 3'))

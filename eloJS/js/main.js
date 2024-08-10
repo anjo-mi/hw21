@@ -77,15 +77,48 @@
 // 3----------------------------------------------------------------
 // array to obj 'list' and back
 
+function arrayToList(arr){
+    let obj = null
+    for (let i = arr.length - 1 ; i >= 0 ; i--){
+        obj = {
+            value: arr[i],
+            rest: obj
+        }
+        
+    }
+    return obj
+}
+
+function listToArray(obj){
+    let arr = []
+    while(obj){
+        arr.push(obj.value)
+        obj = obj.rest
+    }
+    return arr
+}
+
+function prepend(el, obj){
+    return {value: el, rest: obj}
+}
+
+function nth(obj, n){
+    if (n === 0) return obj ? obj.value : undefined
+    if (obj === null) return undefined
+    return nth(obj.rest, n-1)
 
 
 
-
+    
+    // non recursive---------------------------------------
+    
+    // for (let i = 0 ; i < n ; i++){
+    //     if (obj === null) return undefined
+    //     obj = obj.rest
+    // }
+    // return obj ? obj.value : undefined
+}
 console.log(arrayToList([10, 20]));
-// → {value: 10, rest: {value: 20, rest: null}}
 console.log(listToArray(arrayToList([10, 20, 30])));
-// → [10, 20, 30]
 console.log(prepend(10, prepend(20, null)));
-// → {value: 10, rest: {value: 20, rest: null}}
 console.log(nth(arrayToList([10, 20, 30]), 1));
-// → 20

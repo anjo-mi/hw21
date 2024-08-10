@@ -29,7 +29,7 @@
 
 
 
-// 2------------------------------------------------------------------
+// 2----------------------------------------------------------------
 // filter range in array, don't change array
 
 
@@ -227,18 +227,41 @@
 // filter unique elements from an array
 
 
-function unique(arr) {
-    let singles = []
-    arr.forEach(el => {
-        if (!singles.includes(el)){
-            singles.push(el)
-        }
-    })
-    return singles
-  }
+// function unique(arr) {
+//     let singles = []
+//     arr.forEach(el => {
+//         if (!singles.includes(el)){
+//             singles.push(el)
+//         }
+//     })
+//     return singles
+//   }
   
-  let strings = ["Hare", "Krishna", "Hare", "Krishna",
-    "Krishna", "Krishna", "Hare", "Hare", ":-O"
-  ]
+//   let strings = ["Hare", "Krishna", "Hare", "Krishna",
+//     "Krishna", "Krishna", "Hare", "Hare", ":-O"
+//   ]
+//   console.log( unique(strings) )
+
+
+
+
+// 12----------------------------------------------------------------
+// group by id
+
+
+// let users = [
+//     {id: 'john', name: "John Smith", age: 20},
+//     {id: 'ann', name: "Ann Smith", age: 24},
+//     {id: 'pete', name: "Pete Peterson", age: 31},
+// ]
   
-  console.log( unique(strings) )
+// function groupById(arr){
+//     let obj = {}
+//     arr.forEach(el => {
+//         obj[el.id] = el
+//     })
+//     return obj
+// }
+// let usersById = groupById(users)
+// console.log(usersById)
+

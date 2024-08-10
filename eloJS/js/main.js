@@ -129,4 +129,34 @@ console.log(nth(arrayToList([10, 20, 30]), 1));
 
 
 // 4--------------------------------------------------------------------
+// deep equal comparison, for objs too
 
+
+function deepEqual(obj, obj2){
+    if (typeof obj !== 'object' || typeof obj2 !== 'object'){
+        return obj === obj2 ? true : false
+    }
+    let keys = Object.keys(obj)
+    let keys2 = Object.keys(obj2)
+    if (keys.length !== keys2.length) return false
+    
+    for (let key of keys){
+        if (!keys2.includes(key)) return false
+        
+        if(!deepEqual(obj[key], obj2[key])){
+            return false
+        }
+    }
+    return true
+}
+
+
+
+
+let obj = {here: {is: "an"}, object: 2};
+console.log(deepEqual(obj, obj));
+// → true
+console.log(deepEqual(obj, {here: 1, object: 2}));
+// → false
+console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
+// → true

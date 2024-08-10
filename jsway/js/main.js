@@ -1,4 +1,8 @@
 // 1------------------------------------------------------------
+// camel case
+
+
+
 
 // function camelize(str){
 //     str = str.split('-')
@@ -21,7 +25,15 @@
 
 
 
+
+
+
+
 // 2------------------------------------------------------------------
+// filter range in array, don't change array
+
+
+
 
 // function filterRange(arr, a, b){
 //     let filtered = arr.filter(el => el >= a && el <= b)
@@ -34,6 +46,8 @@
 
 
 // 3------------------------------------------------------------------
+// sort array in decreasing order
+
 
 // function decreasingOrder(arr){
 //     return arr.sort((a,b) => b-a)
@@ -45,6 +59,8 @@
 
 
 // 4----------------------------------------------------------------
+// sort a copy of an array without changing initial order of array
+
 
 // function copySorted(arr){
 //     let copy = []
@@ -59,7 +75,13 @@
 
 
 
+
+
+
 // 5--------------------------------------------------------------
+// create a simple calculator
+
+
 
 // function Calc(){
 //     this.operation = {
@@ -96,7 +118,7 @@
 
 
 // 6------------------------------------------------------------------
-
+// map user array to array of their names
 
 // let john = { name: "John", age: 25 };
 // let pete = { name: "Pete", age: 30 };
@@ -114,7 +136,7 @@
 
 
 // 7--------------------------------------------------------------------
-
+// map to new array of objects, combining keys into new keys
 
 // let john = { name: "John", surname: "Smith", id: 1 };
 // let pete = { name: "Pete", surname: "Hunt", id: 2 };
@@ -135,7 +157,7 @@
 
 
 // 8--------------------------------------------------------------------
-
+// sort array of objects by age
 
 // let john = { name: "John", age: 25 };
 // let pete = { name: "Pete", age: 30 };
@@ -159,20 +181,64 @@
 
 
 // 9------------------------------------------------------------------
+// shuffle array
+
+// function shuffle(arr){
+//     let ind = arr.length
+
+//     while(ind > 0){
+//         let random = Math.floor(Math.random() * ind)
+//         ind--
+
+//         [arr[ind], arr[random]] = [arr[random], arr[ind]]
+//     }
+//     return arr
+// }
+// let arr = [1, 2, 3];
+// console.log(shuffle(arr))
+// console.log(shuffle(arr))
+// console.log(shuffle(arr))
 
 
-function shuffle(arr){
-    let ind = arr.length
 
-    while(ind > 0){
-        let random = Math.floor(Math.random() * ind)
-        ind--
 
-        [arr[ind], arr[random]] = [arr[random], arr[ind]]
-    }
-    return arr
-}
-let arr = [1, 2, 3];
-console.log(shuffle(arr))
-console.log(shuffle(arr))
-console.log(shuffle(arr))
+
+
+// 10---------------------------------------------------------------
+// get average age of array of user objs
+
+
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 29 };
+// let arr = [ john, pete, mary ];
+
+// function getAverageAge(arr){
+//     return arr.reduce((a,el) => a + el.age ,0) / arr.length
+// }
+// console.log( getAverageAge(arr) )
+
+
+
+
+
+
+// 11---------------------------------------------------------------
+// filter unique elements from an array
+
+
+function unique(arr) {
+    let singles = []
+    arr.forEach(el => {
+        if (!singles.includes(el)){
+            singles.push(el)
+        }
+    })
+    return singles
+  }
+  
+  let strings = ["Hare", "Krishna", "Hare", "Krishna",
+    "Krishna", "Krishna", "Hare", "Hare", ":-O"
+  ]
+  
+  console.log( unique(strings) )

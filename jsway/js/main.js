@@ -116,15 +116,63 @@
 // 7--------------------------------------------------------------------
 
 
-let john = { name: "John", surname: "Smith", id: 1 };
-let pete = { name: "Pete", surname: "Hunt", id: 2 };
-let mary = { name: "Mary", surname: "Key", id: 3 };
+// let john = { name: "John", surname: "Smith", id: 1 };
+// let pete = { name: "Pete", surname: "Hunt", id: 2 };
+// let mary = { name: "Mary", surname: "Key", id: 3 };
 
-let users = [ john, pete, mary ];
+// let users = [ john, pete, mary ];
 
-let usersMapped = users.map(el =>({
-    fullName: `${el.name} ${el.surname}`,
-    id: el.id
-}))
-console.log( usersMapped[0].id )
-console.log( usersMapped[0].fullName )
+// let usersMapped = users.map(el =>({
+//     fullName: `${el.name} ${el.surname}`,
+//     id: el.id
+// }))
+// console.log( usersMapped[0].id )
+// console.log( usersMapped[0].fullName )
+
+
+
+
+
+
+// 8--------------------------------------------------------------------
+
+
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+
+// let arr = [ pete, john, mary ];
+
+// function sortByAge(arr){
+//     arr.sort((a,b) => a.age - b.age)
+// }
+
+// sortByAge(arr);
+
+// console.log(arr[0].name)
+// console.log(arr[1].name)
+// console.log(arr[2].name)
+
+
+
+
+
+
+// 9------------------------------------------------------------------
+
+
+function shuffle(arr){
+    let ind = arr.length
+
+    while(ind > 0){
+        let random = Math.floor(Math.random() * ind)
+        ind--
+
+        [arr[ind], arr[random]] = [arr[random], arr[ind]]
+    }
+    return arr
+}
+let arr = [1, 2, 3];
+console.log(shuffle(arr))
+console.log(shuffle(arr))
+console.log(shuffle(arr))

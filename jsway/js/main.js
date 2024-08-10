@@ -61,34 +61,70 @@
 
 // 5--------------------------------------------------------------
 
-function Calc(){
-    this.operation = {
-        '+' : (a,b) => a + b,
-        '-' : (a,b) => a - b,
-        '*' : (a,b) => a * b,
-        '/' : (a,b) => a / b
-    }
+// function Calc(){
+//     this.operation = {
+//         '+' : (a,b) => a + b,
+//         '-' : (a,b) => a - b,
+//         '*' : (a,b) => a * b,
+//         '/' : (a,b) => a / b
+//     }
 
-    this.getVal = (str) =>{
-        str = str.split(' ')
+//     this.getVal = (str) =>{
+//         str = str.split(' ')
 
-        a = +str[0]
-        op = str[1]
-        b = +str[2]
+//         a = +str[0]
+//         op = str[1]
+//         b = +str[2]
 
-        if (!this.operation[op] || isNaN(a) || isNaN(b)){
-            return 'invalid entry'
-        }else{
-            return this.operation[op](a,b)
-        }
-    }
-    this.addOps = function(name, func){
-        return this.operation[name] = (func)
-    }
-}
+//         if (!this.operation[op] || isNaN(a) || isNaN(b)){
+//             return 'invalid entry'
+//         }else{
+//             return this.operation[op](a,b)
+//         }
+//     }
+//     this.addOps = function(name, func){
+//         return this.operation[name] = (func)
+//     }
+// }
+// const power = new Calc()
+// power.addOps('**', (a,b) => a**b)
+// console.log(power.getVal('2 ** 3'))
 
-const power = new Calc()
 
-power.addOps('**', (a,b) => a**b)
 
-console.log(power.getVal('2 ** 3'))
+
+
+
+// 6------------------------------------------------------------------
+
+
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+
+// let users = [ john, pete, mary ];
+
+// let names = users.map(el => el.name)
+
+// console.log( names )
+
+
+
+
+
+
+// 7--------------------------------------------------------------------
+
+
+let john = { name: "John", surname: "Smith", id: 1 };
+let pete = { name: "Pete", surname: "Hunt", id: 2 };
+let mary = { name: "Mary", surname: "Key", id: 3 };
+
+let users = [ john, pete, mary ];
+
+let usersMapped = users.map(el =>({
+    fullName: `${el.name} ${el.surname}`,
+    id: el.id
+}))
+console.log( usersMapped[0].id )
+console.log( usersMapped[0].fullName )
